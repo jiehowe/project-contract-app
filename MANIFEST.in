@@ -1,0 +1,15 @@
+include README.md
+include license.txt
+recursive-include project_contract *.css
+recursive-include project_contract *.csv
+recursive-include project_contract *.html
+recursive-include project_contract *.ico
+recursive-include project_contract *.js
+recursive-include project_contract *.json
+recursive-include project_contract *.md
+recursive-include project_contract *.png
+recursive-include project_contract *.py
+recursive-include project_contract *.svg
+recursive-include project_contract *.txt
+recursive-include project_contract *.xml
+recursive-exclude project_contract *.pyc

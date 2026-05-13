@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project_contract"
+version = "0.0.1"
+description = "Project contract management app for ERPNext"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Jie Howe" }
+]
+license = { text = "MIT" }
+keywords = ["frappe", "erpnext", "contracts", "projects"]
+
+[tool.setuptools.packages.find]
+include = ["project_contract*"]
+
+[tool.setuptools.package-data]
+project_contract = [
+  "**/*.css",
+  "**/*.csv",
+  "**/*.html",
+  "**/*.ico",
+  "**/*.js",
+  "**/*.json",
+  "**/*.md",
+  "**/*.png",
+  "**/*.py",
+  "**/*.svg",
+  "**/*.txt",
+  "**/*.xml",
+]
+
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<17.0.0"
