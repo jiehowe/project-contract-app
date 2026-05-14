@@ -1,0 +1,91 @@
+{
+  "actions": [],
+  "creation": "2026-05-13 18:30:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "milestone_name",
+    "planned_date",
+    "column_break_main",
+    "percentage",
+    "amount",
+    "description",
+    "billing_condition",
+    "completion_status",
+    "invoice_created",
+    "sales_invoice"
+  ],
+  "fields": [
+    {
+      "fieldname": "milestone_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Milestone name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "planned_date",
+      "fieldtype": "Date",
+      "in_list_view": 1,
+      "label": "Planned date"
+    },
+    {
+      "fieldname": "column_break_main",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "percentage",
+      "fieldtype": "Percent",
+      "in_list_view": 1,
+      "label": "Percentage"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Amount"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "billing_condition",
+      "fieldtype": "Small Text",
+      "label": "Billing condition"
+    },
+    {
+      "default": "Pending",
+      "fieldname": "completion_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Completion status",
+      "options": "Pending\nCompleted\nReady to Bill\nBilled\nCancelled"
+    },
+    {
+      "default": "0",
+      "fieldname": "invoice_created",
+      "fieldtype": "Check",
+      "label": "Invoice created"
+    },
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales invoice",
+      "options": "Sales Invoice"
+    }
+  ],
+  "istable": 1,
+  "links": [],
+  "modified": "2026-05-13 18:30:00.000000",
+  "modified_by": "Administrator",
+  "module": "Project Contract",
+  "name": "Project Contract Milestone",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "idx",
+  "sort_order": "ASC",
+  "states": []
+}
