@@ -39,10 +39,20 @@ ERPNext integration currently includes:
 Reporting currently includes:
 
 - `Contract Register` script report for contract pipeline and value tracking
+- `Expiring Contracts` script report for near-term expiry monitoring
+- `Variation Summary` script report for commercial change tracking
 
 Status control currently includes:
 
 - guarded contract transitions for Draft, Review, Approval, Active, Suspended, Closed, Cancelled, and Expired
+
+Daily automation currently includes:
+
+- automatic move to `Expired` when end date has passed
+
+Printing currently includes:
+
+- `Project Contract Summary` print format synced on install and migrate
 
 See [project_contract_app_spec.md](project_contract_app_spec.md) for the planned
 ERPNext contract model.

@@ -25,3 +25,9 @@ doc_events = {
         "on_update_after_submit": "project_contract.erpnext_integrations.sales_invoice.update_contract_billed_amount",
     }
 }
+
+scheduler_events = {
+    "daily": [
+        "project_contract.tasks.daily.run_daily_contract_maintenance",
+    ]
+}
