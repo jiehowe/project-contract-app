@@ -42,6 +42,22 @@ Reporting currently includes:
 - `Expiring Contracts` script report for near-term expiry monitoring
 - `Variation Summary` script report for commercial change tracking
 
+The app also now includes the first subcontract-management slice:
+
+- `Subcontract`
+- `Subcontract Scope Item`
+- `Subcontract Claim`
+- `Subcontract Claim Item`
+- `Subcontract Variation`
+
+Subcontract support currently includes:
+
+- supplier-side contract validation and financial rollups
+- approved variation rollups into revised subcontract value
+- certified claim rollups into subcontract commitment tracking
+- `Purchase Invoice` links for subcontract and subcontract claim
+- `Subcontract Register` and `Claims Awaiting Certification` reports
+
 Status control currently includes:
 
 - guarded contract transitions for Draft, Review, Approval, Active, Suspended, Closed, Cancelled, and Expired
@@ -56,3 +72,6 @@ Printing currently includes:
 
 See [project_contract_app_spec.md](project_contract_app_spec.md) for the planned
 ERPNext contract model.
+
+See [subcontract_app_spec.md](subcontract_app_spec.md) for the subcontract
+management design.

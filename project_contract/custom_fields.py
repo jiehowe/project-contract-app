@@ -33,4 +33,28 @@ def get_custom_fields():
                 "in_standard_filter": 1,
             },
         ],
+        "Purchase Invoice": [
+            {
+                "fieldname": "subcontract_section",
+                "fieldtype": "Section Break",
+                "label": "Subcontract",
+                "insert_after": "project",
+            },
+            {
+                "fieldname": "subcontract",
+                "fieldtype": "Link",
+                "label": "Subcontract",
+                "options": "Subcontract",
+                "insert_after": "subcontract_section",
+                "in_standard_filter": 1,
+            },
+            {
+                "fieldname": "subcontract_claim",
+                "fieldtype": "Link",
+                "label": "Subcontract Claim",
+                "options": "Subcontract Claim",
+                "insert_after": "subcontract",
+                "in_standard_filter": 1,
+            },
+        ],
     }

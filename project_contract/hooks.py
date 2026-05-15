@@ -23,7 +23,13 @@ doc_events = {
         "on_submit": "project_contract.erpnext_integrations.sales_invoice.update_contract_billed_amount",
         "on_cancel": "project_contract.erpnext_integrations.sales_invoice.update_contract_billed_amount",
         "on_update_after_submit": "project_contract.erpnext_integrations.sales_invoice.update_contract_billed_amount",
-    }
+    },
+    "Purchase Invoice": {
+        "validate": "project_contract.erpnext_integrations.purchase_invoice.validate_purchase_invoice",
+        "on_submit": "project_contract.erpnext_integrations.purchase_invoice.update_subcontract_invoiced_amount",
+        "on_cancel": "project_contract.erpnext_integrations.purchase_invoice.update_subcontract_invoiced_amount",
+        "on_update_after_submit": "project_contract.erpnext_integrations.purchase_invoice.update_subcontract_invoiced_amount",
+    },
 }
 
 scheduler_events = {
