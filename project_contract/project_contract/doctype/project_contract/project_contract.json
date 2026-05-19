@@ -19,6 +19,7 @@
     "contract_dates_section",
     "start_date",
     "end_date",
+    "revised_end_date",
     "signed_date",
     "column_break_dates",
     "project_manager",
@@ -132,6 +133,12 @@
       "fieldtype": "Date",
       "in_list_view": 1,
       "label": "End date"
+    },
+    {
+      "fieldname": "revised_end_date",
+      "fieldtype": "Date",
+      "label": "Revised end date",
+      "read_only": 1
     },
     {
       "fieldname": "signed_date",

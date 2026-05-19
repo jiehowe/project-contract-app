@@ -5,6 +5,7 @@ app_description = "Project contract management app for ERPNext"
 app_email = "support@example.com"
 app_license = "MIT"
 app_version = "0.0.1"
+required_apps = ["erpnext"]
 
 # Modules
 # -------

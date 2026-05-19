@@ -72,6 +72,7 @@ class ContractVariation(Document):
             {
                 "total_variation_amount": contract.total_variation_amount,
                 "revised_contract_value": contract.revised_contract_value,
+                "revised_end_date": contract.revised_end_date,
                 "remaining_contract_value": contract.remaining_contract_value,
             },
             update_modified=False,

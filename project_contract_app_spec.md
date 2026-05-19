@@ -30,6 +30,13 @@ Frappe apps and DocTypes are the intended extension model for this kind of workf
 - App name: `project_contract`
 - Module name: `Project Contract`
 
+## Version target
+
+- Target platform: ERPNext / Frappe v16
+- App dependency: ERPNext is required
+- Use standard DocTypes and `doc_events` for lifecycle reactions on `Sales Invoice`
+- Prefer v16 extension hooks such as `extend_doctype_class` only when adding methods or properties to standard DocType classes
+
 ## Main use cases
 
 1. Create a contract for a customer and link it to a project.
@@ -55,6 +62,7 @@ Suggested fields:
 - `contract_type` - Lump Sum / Time and Material / Recurring / Milestone Based
 - `start_date`
 - `end_date`
+- `revised_end_date`
 - `currency`
 - `contract_value`
 - `retention_percentage`
@@ -205,6 +213,7 @@ Server-side hooks or DocType methods:
 
 - On contract approval, set status to `Active` if signature conditions are met.
 - On variation apply, update contract value and end date.
+- On approved or applied variations, roll the latest revised end date back to the parent contract.
 - On invoice creation, update billed amount on the contract.
 - Daily scheduled job:
   - mark contracts as `Expired` when end date passes

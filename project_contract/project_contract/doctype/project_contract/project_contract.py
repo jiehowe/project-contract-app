@@ -3,7 +3,10 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import flt
 
-from project_contract.project_contract.utils import get_project_contract_variation_total
+from project_contract.project_contract.utils import (
+    get_project_contract_revised_end_date,
+    get_project_contract_variation_total,
+)
 
 
 class ProjectContract(Document):
@@ -109,4 +112,7 @@ class ProjectContract(Document):
             get_project_contract_variation_total(self.name) if self.name and not self.is_new() else 0.0
         )
         self.revised_contract_value = contract_value + flt(self.total_variation_amount)
+        self.revised_end_date = (
+            get_project_contract_revised_end_date(self.name) if self.name and not self.is_new() else None
+        )
         self.remaining_contract_value = self.revised_contract_value - billed_amount
