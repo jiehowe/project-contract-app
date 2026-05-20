@@ -15,7 +15,15 @@ From your bench directory:
 ```bash
 bench get-app https://github.com/jiehowe/project-contract-app.git
 bench --site your-site-name install-app project_contract
-grep -qxF document_management sites/apps.txt || printf 'document_management\n' >> sites/apps.txt
+python3 - <<'PY'
+from pathlib import Path
+
+apps_txt = Path("sites/apps.txt")
+apps = apps_txt.read_text().splitlines()
+if "document_management" not in apps:
+    apps.append("document_management")
+apps_txt.write_text("\n".join(apps) + "\n")
+PY
 bench --site your-site-name install-app document_management
 bench migrate
 ```
@@ -23,7 +31,9 @@ bench migrate
 `document_management` is a second Frappe app shipped in the same repository.
 Bench may register only `project_contract` in `sites/apps.txt` after
 `bench get-app`, so add `document_management` to `sites/apps.txt` before
-installing it.
+installing it. Keep it on its own line; a malformed line such as
+`project_contractdocument_management` will prevent Frappe from importing either
+app name correctly.
 
 ## Current scope
 
