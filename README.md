@@ -1,9 +1,12 @@
-# Project Contract App
+# Project Contract and Document Management Apps
 
-Installable Frappe app scaffold for ERPNext project contract management.
+Installable Frappe app scaffold for ERPNext project contract, subcontract, and
+document management.
 
-This repository now contains the base app structure needed for `bench get-app`
-and `bench --site <site> install-app project_contract`.
+This repository contains two installable Frappe apps:
+
+- `project_contract` - project contract and subcontract commercial control
+- `document_management` - separate document-control app that can link back to contracts and subcontracts
 
 ## Install
 
@@ -12,12 +15,13 @@ From your bench directory:
 ```bash
 bench get-app https://github.com/jiehowe/project-contract-app.git
 bench --site your-site-name install-app project_contract
+bench --site your-site-name install-app document_management
 bench migrate
 ```
 
 ## Current scope
 
-The app now includes the first working DocType layer:
+The `project_contract` app includes the first working DocType layer:
 
 - `Project Contract`
 - `Project Contract Milestone`
@@ -42,7 +46,7 @@ Reporting currently includes:
 - `Expiring Contracts` script report for near-term expiry monitoring
 - `Variation Summary` script report for commercial change tracking
 
-The app also now includes the first subcontract-management slice:
+The `project_contract` app also includes the first subcontract-management slice:
 
 - `Subcontract`
 - `Subcontract Scope Item`
@@ -57,6 +61,23 @@ Subcontract support currently includes:
 - certified claim rollups into subcontract commitment tracking
 - `Purchase Invoice` links for subcontract and subcontract claim
 - `Subcontract Register` and `Claims Awaiting Certification` reports
+
+The repository also includes a separate document-management app:
+
+- `Project Document`
+- `Project Document Link`
+
+Document support currently includes:
+
+- one register for incoming, outgoing, and internal project documents
+- correspondence threading through reply and root document links
+- generic links from a document to contracts, subcontracts, claims, invoices, and future records
+- validation for reply chains, counterparty selection, and issued / received movement dates
+
+This is intentionally not mixed into the `project_contract` app. It remains
+interlinked through `Project Document Link`, which can point to `Project
+Contract`, `Contract Variation`, `Subcontract`, `Subcontract Variation`,
+`Subcontract Claim`, ERPNext invoices, and future records.
 
 Status control currently includes:
 
@@ -74,4 +95,7 @@ See [project_contract_app_spec.md](project_contract_app_spec.md) for the planned
 ERPNext contract model.
 
 See [subcontract_app_spec.md](subcontract_app_spec.md) for the subcontract
+management design.
+
+See [document_management_spec.md](document_management_spec.md) for the document
 management design.

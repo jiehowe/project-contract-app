@@ -5,20 +5,34 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "project_contract"
 version = "0.0.1"
-description = "Project contract management app for ERPNext"
+description = "Project contract and document management apps for ERPNext"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
   { name = "Jie Howe" }
 ]
 license = { text = "MIT" }
-keywords = ["frappe", "erpnext", "contracts", "projects"]
+keywords = ["frappe", "erpnext", "contracts", "projects", "documents"]
 
 [tool.setuptools.packages.find]
-include = ["project_contract*"]
+include = ["project_contract*", "document_management*"]
 
 [tool.setuptools.package-data]
 project_contract = [
+  "**/*.css",
+  "**/*.csv",
+  "**/*.html",
+  "**/*.ico",
+  "**/*.js",
+  "**/*.json",
+  "**/*.md",
+  "**/*.png",
+  "**/*.py",
+  "**/*.svg",
+  "**/*.txt",
+  "**/*.xml",
+]
+document_management = [
   "**/*.css",
   "**/*.csv",
   "**/*.html",

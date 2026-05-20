@@ -13,3 +13,16 @@ recursive-include project_contract *.svg
 recursive-include project_contract *.txt
 recursive-include project_contract *.xml
 recursive-exclude project_contract *.pyc
+recursive-include document_management *.css
+recursive-include document_management *.csv
+recursive-include document_management *.html
+recursive-include document_management *.ico
+recursive-include document_management *.js
+recursive-include document_management *.json
+recursive-include document_management *.md
+recursive-include document_management *.png
+recursive-include document_management *.py
+recursive-include document_management *.svg
+recursive-include document_management *.txt
+recursive-include document_management *.xml
+recursive-exclude document_management *.pyc
