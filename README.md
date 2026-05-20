@@ -15,9 +15,15 @@ From your bench directory:
 ```bash
 bench get-app https://github.com/jiehowe/project-contract-app.git
 bench --site your-site-name install-app project_contract
+grep -qxF document_management sites/apps.txt || printf 'document_management\n' >> sites/apps.txt
 bench --site your-site-name install-app document_management
 bench migrate
 ```
+
+`document_management` is a second Frappe app shipped in the same repository.
+Bench may register only `project_contract` in `sites/apps.txt` after
+`bench get-app`, so add `document_management` to `sites/apps.txt` before
+installing it.
 
 ## Current scope
 
